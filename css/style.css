@@ -1,3 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap");
+.container {
+  max-width: 1720px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 6px 0px 6px;
+}
 
+@media only screen and (max-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+.topnav {
+  background: #256137;
+  height: 84px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.topnav #nav-bar {
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+}
+.topnav #nav-bar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  width: 45vw;
+  margin-left: auto;
+}
+.topnav #nav-bar ul li {
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */
