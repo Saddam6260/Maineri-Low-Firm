@@ -1,0 +1,20 @@
+{
+  "name": "maineri-low-firm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saddam6260/Maineri-Low-Firm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saddam6260/Maineri-Low-Firm/issues"
+  },
+  "homepage": "https://github.com/Saddam6260/Maineri-Low-Firm#readme"
+}
