@@ -113,6 +113,10 @@ li {
     }
 }
 
+.bg-img{
+    background-image: url(../img/main-bg-img.png);
+    background-size: cover;
+}
 header {
     background-color: black;
     @include py(17px);
@@ -180,5 +184,27 @@ header {
                 }
             }
         }
+    }
+}
+
+.main-wrapper{
+    text-align: center;
+
+    h3,h1,p{
+        @include fonts($font-lato, 35px, 400, 42px);
+        color: $c-white;
+        padding-bottom: 55px;
+    }
+    h1{
+        @include fonts($font-pt, 60px, 700, 80px);
+    }
+    p{
+        @include fonts($font-lato, 30px, 500, 37px);
+        padding-bottom: 45px;
+    }
+    button{
+        background-color: $c-oliv;
+        color: white;
+        @include fonts($font-lato, 25px, 400, 30px)
     }
 }
