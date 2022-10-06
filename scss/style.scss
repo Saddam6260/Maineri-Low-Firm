@@ -187,9 +187,6 @@ header {
                         text-decoration: none;
                     }
                 }
-                // .pt-5 {
-                //     padding-top: 5px;
-                // }
             }
         }
     }
@@ -222,10 +219,55 @@ header {
     button {
         @extend %btn-lato;
         margin-top: 55px;
+        margin-bottom: 422px;
     }
 }
 
 .head-main-wrap {
     background-image: url(../img/main-bg-img.png);
     background-size: cover;
+}
+
+// case result style
+
+.card-wrap{
+    display: flex;
+    justify-content: center;
+    column-gap: 33px;
+
+    .case-card{
+    width: 358px;
+    background: #F6F6F6;
+    text-align: center;
+    border-radius: 8px;
+
+    img{
+        width: 75px;
+        height: 75px;
+        margin-top: 32px;
+        margin-bottom: 12px;
+    }
+    h1{
+        color: #BB9338;
+        @include fonts($font-pt, 50px, 700, 66px);
+        margin-bottom: 13px;
+    }
+    p{
+        display: flex;
+        flex-direction: column;
+        @include fonts($font-pt, 26px, 400, 33px);
+        row-gap: 5px;
+        margin-bottom: 25px;
+    }
+}
+}
+
+.case-result{
+    margin-top: -170px;
+    .card-description{
+        color: rgba(0, 0, 0, 0.6);
+        @include fonts($font-pt, 20px, 400, 26px);
+        margin-top: 27px;
+        font-style: italic;
+    }
 }
