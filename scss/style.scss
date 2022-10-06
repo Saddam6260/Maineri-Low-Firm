@@ -1,3 +1,4 @@
+@import "modules/variables";
 @import "modules/fonts";
 @import "modules/commonStyle";
 
@@ -7,10 +8,7 @@
     box-sizing: border-box;
 }
 
-$c-oliv: #256137;
-$c-oliv-dark: #3f6b4d;
-$c-white: #e7ebe8;
-$c-dark-yellow: #bb9338;
+
 
 $color-list: (
     "oliv": "#256137",
@@ -101,6 +99,7 @@ $screenSize: (
         }
         .btn {
             @extend %btn;
+            @extend .bg-white;
             @include media(768px) {
                 padding-left: 20px;
             }
@@ -109,7 +108,7 @@ $screenSize: (
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.48);;
+    background-color: rgba(0, 0, 0, 0.48);
     @include py(17px);
     @extend .color-white;
 
@@ -203,19 +202,26 @@ header {
     p {
         @include fonts($font-lato, 35px, 400, 42px);
         color: $c-white;
-        padding-bottom: 55px;
     }
-    h1 {
+    .since {
+        margin-top: 208px;
+    }
+    .lg-title {
         @include fonts($font-pt, 60px, 700, 80px);
+        border-top: 2px solid $c-white;
+        border-bottom: 2px solid $c-white;
+        @include py(20px);
+        display: inline-block;
+        margin-bottom: 55px;
+        margin-top: 55px;
+        text-transform: uppercase;
     }
     p {
         @include fonts($font-lato, 30px, 500, 37px);
-        padding-bottom: 45px;
     }
     button {
-        background-color: $c-oliv;
-        color: white;
-        @include fonts($font-lato, 25px, 400, 30px);
+        @extend %btn-lato;
+        margin-top: 55px;
     }
 }
 
