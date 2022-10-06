@@ -1,4 +1,7 @@
-
+button {
+    background-color: transparent;
+    border: none;
+}
 %btn {
     border-radius: 5px;
     padding: 16px 32px;
@@ -7,3 +10,7 @@
     font-weight: 600;
 }
 
+ul,
+li {
+    list-style: none;
+}

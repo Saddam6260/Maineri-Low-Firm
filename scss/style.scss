@@ -8,9 +8,9 @@
 }
 
 $c-oliv: #256137;
-$c-oliv-dark: #3F6B4D;
-$c-white: #E7EBE8;
-$c-dark-yellow: #BB9338;
+$c-oliv-dark: #3f6b4d;
+$c-white: #e7ebe8;
+$c-dark-yellow: #bb9338;
 
 $color-list: (
     "oliv": "#256137",
@@ -71,11 +71,6 @@ $screenSize: (
     font-size: $size;
 }
 
-ul,
-li {
-    list-style: none;
-}
-
 .notice-board {
     background: #256137;
     @include py(16px);
@@ -113,12 +108,8 @@ li {
     }
 }
 
-.bg-img{
-    background-image: url(../img/main-bg-img.png);
-    background-size: cover;
-}
 header {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.48);;
     @include py(17px);
     @extend .color-white;
 
@@ -133,9 +124,16 @@ header {
             align-items: center;
             column-gap: 23px;
             .logo {
-                width: 85px;
-                height: 83px;
-
+                width: 55px;
+                height: 55px;
+                @include media(1200px) {
+                    width: 72px;
+                    height: 72px;
+                }
+                @include media(1400px) {
+                    width: 85px;
+                    height: 85px;
+                }
                 img {
                     width: 100%;
                     height: 100%;
@@ -144,67 +142,84 @@ header {
             .brand-name {
                 h2,
                 p {
-                    @include fonts($font-gothic, 34px, 400, 42px);
+                    @include fonts($font-gothic, 30px, 400);
+                    @include media(1400px) {
+                        font-size: 34px;
+                    }
                 }
                 h2 {
                     border-bottom: 1px solid $c-white;
                 }
                 p {
-                    font-size: 16px;
-                    line-height: 20px;
                     margin-top: 5px;
+                    font-size: 14px;
+                    @include media(1400px) {
+                        font-size: 16px;
+                    }
                 }
             }
         }
 
-        .menu{
-            ul{
+        // navbar btn
+        .nav-btn {
+            color: $c-white;
+            font-size: 25px;
+            @include media(1200px) {
+                display: none;
+            }
+        }
+
+        .menu {
+            ul {
                 list-style-type: none;
                 display: flex;
                 column-gap: 31px;
-                li{
+                li {
                     display: none;
+                    @include fonts($font-lato, 16px, 400);
                     @include media(1400px) {
-                        display: block
-                    }   
-                    a{
-                        @include fonts($font-lato, 20px, 400, 24px);
+                        font-size: 20px;
+                    }
+                    @include media(1200px) {
+                        display: block;
+                    }
+                    a {
                         color: $c-white;
                         text-decoration: none;
                     }
                 }
-                .pt-5{
-                    padding-top: 5px;
-                }
-                h1{
-                    display: block;
-                    @include media(1400px) {
-                        display: none;
-                    }
-                }
+                // .pt-5 {
+                //     padding-top: 5px;
+                // }
             }
         }
     }
 }
 
-.main-wrapper{
+.main-wrapper {
     text-align: center;
-
-    h3,h1,p{
+    h3,
+    h1,
+    p {
         @include fonts($font-lato, 35px, 400, 42px);
         color: $c-white;
         padding-bottom: 55px;
     }
-    h1{
+    h1 {
         @include fonts($font-pt, 60px, 700, 80px);
     }
-    p{
+    p {
         @include fonts($font-lato, 30px, 500, 37px);
         padding-bottom: 45px;
     }
-    button{
+    button {
         background-color: $c-oliv;
         color: white;
-        @include fonts($font-lato, 25px, 400, 30px)
+        @include fonts($font-lato, 25px, 400, 30px);
     }
+}
+
+.head-main-wrap {
+    background-image: url(../img/main-bg-img.png);
+    background-size: cover;
 }
