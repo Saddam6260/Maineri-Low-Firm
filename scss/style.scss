@@ -1,10 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-$logo-font:'Josefin Sans', sans-serif;
-$heding-font: 'PT Serif', serif;
-$pera-font: 'Lato', sans-serif;
+$color-list: (
+    "oliv": "#256137",
+    "oliv-dark": "#3F6B4D",
+    "white": "#E7EBE8",
+    "dark-yellow": "#BB9338",
+);
 
-.container{
+@each $name, $code in $color-list {
+    .color-#{$name} {
+        color: unquote($code);
+    }
+    .bg-#{$name} {
+        background-color: unquote($code);
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap");
+
+$logo-font: "Josefin Sans", sans-serif;
+$heding-font: "PT Serif", serif;
+$font-lato: "Lato", sans-serif;
+
+.container {
     max-width: 1720px;
     width: 100%;
     margin-left: auto;
@@ -13,57 +35,87 @@ $pera-font: 'Lato', sans-serif;
 }
 
 @mixin media($width) {
-    @media only screen and (max-width:$width) {
+    @media only screen and (min-width: $width) {
         @content;
     }
 }
-
-@include media(1400px) {
-    .container{
-        max-width: 1320px;
-    }
-}
-@include media(1200px) {
-    .container{
-        max-width: 1140px;
-    }
-}
-@include media(992px) {
-    .container{
-        max-width: 960px;
-    }
-}
-@include media(768px) {
-    .container{
-        max-width: 720px;
-    }
-}
-@include media(576px) {
-    .container{
-        max-width: 540px;
-    }
-}
-
-.topnav{
-    background: #256137;
-    height: 84px;
-    display: flex;
-    flex-direction: row;
-
-    #nav-bar{
-        font-weight: 400;
-        font-family: $pera-font;
-
-        ul{
-            list-style-type: none;
-            display: flex;
-            flex-direction: row;
-            width: 45vw;
-            margin-left: auto;
-
-            li{
-                color: white;
-            }
+$screenSize: (
+    "576px": "540px",
+    "768px": "720px",
+    "992px": "960px",
+    "1200px": "1140px",
+    "1400px": "1320px",
+    "1800px": "1720px",
+);
+@each $screen, $max in $screenSize {
+    .container {
+        @include media($screen) {
+            max-width: unquote($max);
         }
+    }
+}
+
+
+@mixin py ($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+}
+@mixin px ($size) {
+    padding-left: $size;
+    padding-right: $size;
+}
+
+// common style 
+%btn {
+    border-radius: 5px;
+    padding: 16px 32px;
+    border: none;
+    font-family: $font-lato;
+    font-weight: 600;
+}
+
+ul, li {
+    list-style: none;
+}
+
+
+
+
+
+
+.notice-board {
+    background: #256137;
+    @include py(16px);
+
+    ul {
+        @include media(768px) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        li {
+            font-family: $font-lato;
+            font-weight: 400;
+            @extend .color-white;
+            margin-bottom: 10px;
+            &:first-child {
+                border-right: 2px solid index($list: $color-list, $value: 'white');
+            }
+            &:last-child {
+                margin-bottom: 0px;
+            }
+            @include media(768px) {
+                margin-bottom: 0px;
+                @include px(10px);
+            }
+            
+        }
+        .btn {
+           @extend %btn; 
+           @include media(768px) {
+            padding-left: 20px;
+           }
+        }
+
     }
 }
