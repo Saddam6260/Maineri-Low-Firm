@@ -22,8 +22,8 @@ $color-list: (
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap");
 
-$logo-font: "Josefin Sans", sans-serif;
-$heding-font: "PT Serif", serif;
+$font-josefin: "Josefin Sans", sans-serif;
+$font-pt: "PT Serif", serif;
 $font-lato: "Lato", sans-serif;
 
 .container {
@@ -64,7 +64,9 @@ $screenSize: (
     padding-left: $size;
     padding-right: $size;
 }
-
+@mixin font-size($size) {
+    font-size: $size;
+}
 // common style 
 %btn {
     border-radius: 5px;
@@ -77,11 +79,6 @@ $screenSize: (
 ul, li {
     list-style: none;
 }
-
-
-
-
-
 
 .notice-board {
     background: #256137;
@@ -116,6 +113,39 @@ ul, li {
             padding-left: 20px;
            }
         }
-
     }
+}
+
+header {
+    background-color: black;
+    @include py(17px);
+    @extend .color-white;
+
+    .topmenu{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .logo-side {
+            display: flex;
+            align-items: center;
+            .logo{
+                width: 85px;
+                height: 83px;
+                padding-right: 23px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .brand-name{
+                h2{
+                    font-family: $font-josefin;
+                    font-size: 34px;
+                }
+            }
+        }
+    }
+
 }
