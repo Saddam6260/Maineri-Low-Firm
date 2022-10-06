@@ -1,8 +1,16 @@
+@import "modules/fonts";
+@import "modules/commonStyle";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+$c-oliv: #256137;
+$c-oliv-dark: #3F6B4D;
+$c-white: #E7EBE8;
+$c-dark-yellow: #BB9338;
 
 $color-list: (
     "oliv": "#256137",
@@ -21,10 +29,6 @@ $color-list: (
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap");
-
-$font-josefin: "Josefin Sans", sans-serif;
-$font-pt: "PT Serif", serif;
-$font-lato: "Lato", sans-serif;
 
 .container {
     max-width: 1720px;
@@ -55,28 +59,20 @@ $screenSize: (
     }
 }
 
-
-@mixin py ($size) {
+@mixin py($size) {
     padding-top: $size;
     padding-bottom: $size;
 }
-@mixin px ($size) {
+@mixin px($size) {
     padding-left: $size;
     padding-right: $size;
 }
 @mixin font-size($size) {
     font-size: $size;
 }
-// common style 
-%btn {
-    border-radius: 5px;
-    padding: 16px 32px;
-    border: none;
-    font-family: $font-lato;
-    font-weight: 600;
-}
 
-ul, li {
+ul,
+li {
     list-style: none;
 }
 
@@ -96,7 +92,8 @@ ul, li {
             @extend .color-white;
             margin-bottom: 10px;
             &:first-child {
-                border-right: 2px solid index($list: $color-list, $value: 'white');
+                border-right: 2px solid
+                    index($list: $color-list, $value: "white");
             }
             &:last-child {
                 margin-bottom: 0px;
@@ -105,13 +102,12 @@ ul, li {
                 margin-bottom: 0px;
                 @include px(10px);
             }
-            
         }
         .btn {
-           @extend %btn; 
-           @include media(768px) {
-            padding-left: 20px;
-           }
+            @extend %btn;
+            @include media(768px) {
+                padding-left: 20px;
+            }
         }
     }
 }
@@ -121,7 +117,7 @@ header {
     @include py(17px);
     @extend .color-white;
 
-    .topmenu{
+    .topmenu {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -129,23 +125,31 @@ header {
         .logo-side {
             display: flex;
             align-items: center;
-            .logo{
+            column-gap: 23px;
+            .logo {
                 width: 85px;
                 height: 83px;
-                padding-right: 23px;
+                // padding-right: 23px;
 
-                img{
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
-            .brand-name{
-                h2{
-                    font-family: $font-josefin;
-                    font-size: 34px;
+            .brand-name {
+                h2,
+                p {
+                    @include fonts($font-gothic, 34px, 400, 42px);
+                }
+                h2 {
+                    border-bottom: 1px solid $c-white;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-top: 5px;
                 }
             }
         }
     }
-
 }
