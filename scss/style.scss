@@ -97,6 +97,7 @@ li {
             }
             &:last-child {
                 margin-bottom: 0px;
+                padding-right: 0px;
             }
             @include media(768px) {
                 margin-bottom: 0px;
@@ -120,6 +121,7 @@ header {
     .topmenu {
         display: flex;
         flex-flow: row wrap;
+        align-items: center;
         justify-content: space-between;
 
         .logo-side {
@@ -129,7 +131,6 @@ header {
             .logo {
                 width: 85px;
                 height: 83px;
-                // padding-right: 23px;
 
                 img {
                     width: 100%;
@@ -148,6 +149,34 @@ header {
                     font-size: 16px;
                     line-height: 20px;
                     margin-top: 5px;
+                }
+            }
+        }
+
+        .menu{
+            ul{
+                list-style-type: none;
+                display: flex;
+                column-gap: 31px;
+                li{
+                    display: none;
+                    @include media(1400px) {
+                        display: block
+                    }   
+                    a{
+                        @include fonts($font-lato, 20px, 400, 24px);
+                        color: $c-white;
+                        text-decoration: none;
+                    }
+                }
+                .pt-5{
+                    padding-top: 5px;
+                }
+                h1{
+                    display: block;
+                    @include media(1400px) {
+                        display: none;
+                    }
                 }
             }
         }

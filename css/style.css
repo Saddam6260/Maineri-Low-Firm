@@ -120,6 +120,7 @@ li {
 }
 .notice-board ul li:last-child {
   margin-bottom: 0px;
+  padding-right: 0px;
 }
 @media only screen and (min-width: 768px) {
   .notice-board ul li {
@@ -142,6 +143,7 @@ header {
 header .topmenu {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
   justify-content: space-between;
 }
 header .topmenu .logo-side {
@@ -171,6 +173,38 @@ header .topmenu .logo-side .brand-name p {
   font-size: 16px;
   line-height: 20px;
   margin-top: 5px;
+}
+header .topmenu .menu ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 31px;
+}
+header .topmenu .menu ul li {
+  display: none;
+}
+@media only screen and (min-width: 1400px) {
+  header .topmenu .menu ul li {
+    display: block;
+  }
+}
+header .topmenu .menu ul li a {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #E7EBE8;
+  text-decoration: none;
+}
+header .topmenu .menu ul .pt-5 {
+  padding-top: 5px;
+}
+header .topmenu .menu ul h1 {
+  display: block;
+}
+@media only screen and (min-width: 1400px) {
+  header .topmenu .menu ul h1 {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
