@@ -271,3 +271,75 @@ header {
         font-style: italic;
     }
 }
+
+// About us
+
+.about-us{
+    text-align: center;
+    margin-top: 101px;
+    margin-bottom: 70px;
+
+    span{
+        color: #41845B;
+        @include fonts($font-pt, 30px, 400, 40px);
+    }
+    h1{
+        @include fonts($font-pt, 55px, 700, 75px);
+        margin-top: 23px;
+        margin-bottom: 50px;
+        text-transform: uppercase
+    }
+    p{
+        @include fonts($font-lato, 30px, 400, 36px);
+        font-style: italic;
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+// logo set section
+
+.logo-set-sec{
+    background-color: #48665121;
+    ;
+}
+.logo-set{
+
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 52px;
+    justify-content: center;
+    @include py(72px);
+
+    .logo-img1{
+        width: 161px;
+        height: 125px;
+    }
+    .logo-img2{
+        width: 92px;
+        height: 127px;
+    }
+    .logo-img3{
+        width: 131px;
+        height: 129px;
+    }
+    .logo-img4{
+        width: 163px;
+        height: 132px;
+    }
+    .logo-img5{
+        width: 130px;
+        height: 127px;
+    }.logo-img6{
+        width: 361px;
+        height: 135px;
+    }
+    .logo-img7{
+        width: 267px;
+        height: 146px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
