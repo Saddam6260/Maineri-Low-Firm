@@ -382,11 +382,8 @@ header {
             font-size: 55px;
         }
     }
-    .border-3p{
-        width: 100px;
-        height: 3px;
-        background-color: $c-oliv;
-        margin-bottom: 25px;
+    .about-border{
+        @extend %border-oliv;
     }
     p{
         @include fonts($font-lato, 30px, 400, 36px);
@@ -622,40 +619,24 @@ header {
     }
 }
 
-.service-sec{
-    margin-top: 153px;
-    margin-bottom: 153px;
-    display: flex;
-    flex-flow: column;
+// Our service
+// .service-sec{
+//     margin-top: 153px;
+//     margin-bottom: 153px;
+//     position: relative;
+// }
+// .service-bg{
+//     height: 814px;
+//     width: 35vw;
+//     background-color: $c-oliv;
+//     position: absolute;
+//     z-index: 1;
+// }
 
-}
-
-.service-bg{
-    width: 674px;
-    height: 814px;
-    background-color: $c-oliv;
-}
-
-.our-service{
-    position: absolute;
-    margin-top: -700px;
-    background-color: $c-white;
-    @include px(50px);
-    @include py(10px);
-    text-align: center;
-
-    h2{
-        @include fonts($font-pt, 50px, 700, 66px);
-        color: $c-oliv;
-    }
-    h5{
-        @include fonts($font-lato, 30px, 400, 60px);
-        color: rgba(0, 0, 0, 0.75);
-        display: flex;
-        flex-flow: column wrap;
-    }
-}
-
+// .our-service{
+//     position: absolute;
+//     z-index: 2;
+// }
 // CHoose us style
 
 .choose-us-sec{
@@ -667,46 +648,194 @@ header {
     padding-bottom: 143px;
 
     .choose-us{
-        padding:0px 146px 106px 82px;
+        padding: 0px 80px 50px 82px;
         background: rgba(15, 70, 32, 0.8);
         display: inline-block;
+
+        @include media(992px) {
+            padding: 0px 146px 106px 82px;
+        }
         
         .choose-batch{
             @extend %batch;
+            font-size: 25px;
             background-color: $c-white;
             color: $c-oliv;
-            padding: 36px 75px 32px 74px;
+            padding: 15px 35px 15px 35px;
             margin-top: -400px;
             margin-bottom: 80px;
+
+            @include media(768px) {
+                padding: 36px 65px 32px 64px;
+                font-size: 45px;
+            }
+            @include media(992px) {
+                padding: 36px 65px 32px 64px;
+                font-size: 50px;
+            }
         }
         .border-line{
             width: 119px;
             height: 2px;
             background-color: $c-white;
             margin-right: 63px;
-            float: left;
             margin-top: 20px;
+
+            @include media(768px) {
+                float: left;
+            }
         }
         p{
-            @include fonts($font-lato, 40px, 400,);
+            @include fonts($font-lato, 30px, 400, initial);
             color: $c-white;
-            display: flex;
-            flex-flow: column;
             font-style: italic;
+            margin-top: 20px;
+
+            @include media(768px){
+                display: flex;
+                flex-flow: column;
+            }
+            @include media(992px) {
+                font-size: 40px;
+            }
         }
 
         ul{
             margin-top: 77px;
+            margin-left: 30px;
+
+            @include media(992px) {
+                margin-left: 82px;
+            }
             
             li{
                 list-style: initial;
                 color: $c-white;
-                @include fonts($font-lato, 40px, 400, 65px);
+                @include fonts($font-lato, 30px, 400, 65px);
 
+                @include media(992px) {
+                    font-size: 40px;
+                }
             }
         }
         
     }
+}
+
+// Practice areas style
+
+.practice-areas{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    @include py(90px);
+
+    span{
+        @include fonts($font-pt, 30px, 400, 40px);
+        color: $c-oliv;
+        padding-bottom: 23px;
+    }
+    h1{
+        @include fonts($font-pt, 50px, 700, 66px);
+        text-transform: uppercase;
+    }
+    .practice-border{
+        @extend %border-oliv;
+        margin-top: 25px;
+    }
+    p{
+        @include fonts($font-lato, 30px, 400, 36px);
+        font-style: italic;
+        color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+    }
+
+}
+
+// Type of damage
+
+.type-of-damage{
+    @include px(25px);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 22px;
+}
+.type-of-damage div{
+    width: 360px;
+    height: 356px;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+    span{
+        @include fonts($font-pt, 29px, 700, 39px);
+        color: white;
+    }
+}
+.type-of-damage div:nth-child(1) {
+    @include py(48px);
+    @include px(30px);
+    background-color: $c-oliv;
+
+    h5{
+        @include fonts($font-pt, 29px, 700, 39px);
+        color: $c-white;
+        margin-bottom: 22px;
+    }
+    p{
+        @include fonts($font-lato, 20px, 400, 35px);
+        color: rgba(255, 255, 255, 0.87);
+        text-align: center
+
+    }
+    button{
+        @include py(16px);
+        @include px(38px);
+        border: 1px solid white;
+        color: $c-white;
+        margin-top: 35px;
+    }
+}
+
+.type-of-damage div:nth-child(2) {
+    background-image: url(../img/practice-img1.png);
+}
+.type-of-damage div:nth-child(3) {
+    background-image: url(../img/practice-img2.png);
+
+}
+.type-of-damage div:nth-child(4) {
+    background-image: url(../img/practice-img3.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(5) {
+    background-image: url(../img/practice-img4.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(6) {
+    background-image: url(../img/practice-img5.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(7) {
+    background-image: url(../img/practice-img6.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(8) {
+    background-image: url(../img/practice-img7.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(9) {
+    background-image: url(../img/practice-img8.png);
+    background-size: cover;
+}
+.type-of-damage div:nth-child(10) {
+    background-image: url(../img/practice-img9.png);
+    background-size: cover;
 }
 
 
