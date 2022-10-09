@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-
+// Color
 
 $color-list: (
     "oliv": "#256137",
@@ -27,6 +27,8 @@ $color-list: (
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@700&display=swap");
+
+// Container
 
 .container {
     max-width: 1720px;
@@ -57,6 +59,8 @@ $screenSize: (
     }
 }
 
+// Padding
+
 @mixin py($size) {
     padding-top: $size;
     padding-bottom: $size;
@@ -69,6 +73,7 @@ $screenSize: (
     font-size: $size;
 }
 
+// Notice board style
 .notice-board {
     background: #256137;
     @include py(16px);
@@ -85,8 +90,10 @@ $screenSize: (
             @extend .color-white;
             margin-bottom: 10px;
             &:first-child {
-                border-right: 2px solid
+                @include media(768px) {
+                    border-right: 2px solid
                     index($list: $color-list, $value: "white");
+                }
             }
             &:last-child {
                 margin-bottom: 0px;
@@ -106,6 +113,8 @@ $screenSize: (
         }
     }
 }
+
+// Header style
 
 header {
     background-color: rgba(0, 0, 0, 0.48);
@@ -191,20 +200,25 @@ header {
         }
     }
 }
+// Main section style
 
 .main-wrapper {
     text-align: center;
     h3,
     h1,
     p {
-        @include fonts($font-lato, 35px, 400, 42px);
+        @include fonts($font-lato, 30px, 400, 42px);
         color: $c-white;
+
+        @include media(576px) {
+            font-size: 35px;
+        }
     }
     .since {
         margin-top: 208px;
     }
     .lg-title {
-        @include fonts($font-pt, 60px, 700, 80px);
+        @include fonts($font-pt, 52px, 700, 80px);
         border-top: 2px solid $c-white;
         border-bottom: 2px solid $c-white;
         @include py(20px);
@@ -212,6 +226,13 @@ header {
         margin-bottom: 55px;
         margin-top: 55px;
         text-transform: uppercase;
+
+        @include media(576px) {
+            font-size: 55px;
+        }
+        @include media(768px) {
+            font-size: 60px;
+        }
     }
     p {
         @include fonts($font-lato, 30px, 500, 37px);
@@ -220,6 +241,11 @@ header {
         @extend %btn-lato;
         margin-top: 55px;
         margin-bottom: 422px;
+        font-size: 20px;
+
+        @include media(576px) {
+            font-size: 25px;
+        }
     }
 }
 
@@ -232,8 +258,21 @@ header {
 
 .card-wrap{
     display: flex;
-    justify-content: center;
-    column-gap: 33px;
+    align-items: center;
+    row-gap: 33px;
+    flex-flow: column wrap;
+
+    @include media(992px) {
+        flex-flow: row wrap;
+        column-gap: 33px;
+        justify-content: space-between;
+    }
+    @include media(1200px) {
+        justify-content: center;
+    }
+    @include media(1400px) {
+        row-gap: 0px;
+    }
 
     .case-card{
     width: 358px;
@@ -241,23 +280,60 @@ header {
     text-align: center;
     border-radius: 8px;
 
+    @include media(576px){
+        width: 420px;
+    }
+    @include media(768px){
+        width: 470px;
+    }
+    @include media(992px) {
+        width: 450px;
+    }
+    @include media(1200px) {
+        width: 480px;
+    }
+    @include media(1400px) {
+        width: 302px;
+    }
+    @include media(1800px) {
+        width: 358px;
+    }
+
     img{
-        width: 75px;
-        height: 75px;
+        width: 65px;
+        height: 65px;
         margin-top: 32px;
         margin-bottom: 12px;
+
+        @include media(768px) {
+            width: 75px;
+            height: 75px;
+        }
+
     }
     h1{
         color: #BB9338;
-        @include fonts($font-pt, 50px, 700, 66px);
+        @include fonts($font-pt, 45px, 700, 66px);
         margin-bottom: 13px;
+
+        @include media(768px) {
+            font-size: 50px;
+        }
     }
     p{
         display: flex;
         flex-direction: column;
-        @include fonts($font-pt, 26px, 400, 33px);
+        @include fonts($font-pt, 20px, 400, 33px);
         row-gap: 5px;
         margin-bottom: 25px;
+
+        @include media(768px) {
+            font-size: 26px;
+        }
+
+        @include media(1400px) {
+            font-size: 22px;
+        }
     }
 }
 }
@@ -266,33 +342,57 @@ header {
     margin-top: -170px;
     .card-description{
         color: rgba(0, 0, 0, 0.6);
-        @include fonts($font-pt, 20px, 400, 26px);
+        @include fonts($font-pt, 16px, 400, 26px);
         margin-top: 27px;
         font-style: italic;
+        text-align: center;
+
+        @include media(768px) {
+            font-size: 20px;
+        }
     }
 }
 
 // About us
 
 .about-us{
-    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 101px;
     margin-bottom: 70px;
 
     span{
         color: #41845B;
-        @include fonts($font-pt, 30px, 400, 40px);
+        @include fonts($font-pt, 25px, 400, 40px);
+
+        @include media(768px) {
+            font-size: 30px;
+        }
     }
     h1{
-        @include fonts($font-pt, 55px, 700, 75px);
+        @include fonts($font-pt, 40px, 700, 75px);
         margin-top: 23px;
-        margin-bottom: 50px;
-        text-transform: uppercase
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include media(768px) {
+            font-size: 55px;
+        }
+    }
+    .border-3p{
+        width: 100px;
+        height: 3px;
+        background-color: $c-oliv;
+        margin-bottom: 25px;
     }
     p{
         @include fonts($font-lato, 30px, 400, 36px);
         font-style: italic;
         color: rgba(0, 0, 0, 0.7);
+        text-align: center;
     }
 }
 
@@ -300,46 +400,313 @@ header {
 
 .logo-set-sec{
     background-color: #48665121;
-    ;
 }
+
 .logo-set{
-
     display: flex;
-    flex-flow: row wrap;
     column-gap: 52px;
-    justify-content: center;
+    flex-flow: row;
     @include py(72px);
+    width: 100%;
+    overflow: scroll;
 
-    .logo-img1{
-        width: 161px;
-        height: 125px;
+}
+.logo-set img:nth-child(1){
+    width: 161px;
+    height: 125px;
+}
+.logo-set img:nth-child(2){
+    width: 92px;
+    height: 127px;
+}
+.logo-set img:nth-child(3){
+    width: 131px;
+    height: 129px;
+}
+.logo-set img:nth-child(4){
+    width: 163px;
+    height: 132px;
+}
+.logo-set img:nth-child(5){
+    width: 130px;
+    height: 127px;
+}
+.logo-set img:nth-child(6){
+    width: 361px;
+    height: 135px;
+}
+.logo-set img:nth-child(7){
+    width: 267px;
+    height: 146px;
+}
+
+// Our story style
+
+.story-wrapper{
+    display: flex;
+    flex-flow: column wrap;
+
+    @include media(1920px) {
+        flex-flow: row wrap;
+        justify-content: space-between;
     }
-    .logo-img2{
-        width: 92px;
-        height: 127px;
+}
+
+.our-story{
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    @include media(1920px) {
+        width: 37%;
     }
-    .logo-img3{
-        width: 131px;
-        height: 129px;
+
+    h1{
+        @include fonts($font-pt, 45px, 700, 66px);
+        margin-top: 50px;
+        margin-bottom: 56px;
+
+        @include media(768px) {
+            font-size: 50px;
+        }
     }
-    .logo-img4{
-        width: 163px;
-        height: 132px;
+
+    p{
+        @include fonts($font-lato, 30px, 400, 50px);
     }
-    .logo-img5{
-        width: 130px;
-        height: 127px;
-    }.logo-img6{
-        width: 361px;
-        height: 135px;
+    a{
+        @include fonts($font-lato, 25px, 500, 30px);
+        display: inline-block;
+        margin-top: 107px;
+        text-decoration: none;
+        color: $c-oliv;
+        margin-bottom: 150px;
+
+        @include media(768px) {
+            font-size: 30px;
+            margin-bottom: 166px;
+        }
+
+        i{
+            margin-left: 30px;
+        }
     }
-    .logo-img7{
-        width: 267px;
-        height: 146px;
+}
+
+.poul-story-wrap{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-oliv;
+    margin-bottom: 100px;
+
+    @include media(990px) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    @include media(1920px) {
+        height: 693px;
+        margin-top: 200px;
+        width: 60%;
     }
 
     img{
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 601px;
+        margin-top: -75px;
+
+        @include media(768px) {
+            height: 733px;
+        }
+        @include media(990px) {
+            width: 38%;
+            height: 601px;
+            padding-left: 50px;
+            margin-top: -150px;
+        }
+        @include media(1400px) {
+            margin-top: -128px;
+            height: 733px;
+            width: 45%;
+            margin-left: 40px;
+        }
+    }
+    .poul-story{
+        padding: 50px;
+        color: $c-white;
+
+        @include media(990px) {
+            width: 60%;
+        }
+        @include media(1400px) {
+            width: 50%;
+        }
+
+        h2{
+            @include fonts($font-pt, 35px, 700, 35px);
+            margin-bottom: 33px;
+        }
+        p{
+            @include fonts($font-lato, 28px, 400, 40px);
+        }
+        button{
+            @extend %btn-lato;
+            border: 1px solid white;
+            @include py(25px);
+            @include px(120px);
+            border-radius: 0px;
+            margin-top: 50px;
+        }
     }
 }
+
+
+// our mission style
+
+.our-mission{
+    color: $c-white;
+    background-image: url("../img/our-mission-bg.png");
+    background-size: cover;
+
+    .mission-batch{
+        @extend %batch;
+        @include py(30px);
+        @include px(80px);
+        position: relative;
+        margin-top: -77px;
+        font-size: 45px;
+
+        @include media(768px) {
+            @include py(34px);
+            @include px(90px);
+            font-size: 45px;
+        }
+    }
+
+    .mission-content{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    
+        h1{
+            @include fonts($font-lato, 50px, 300, 70px);
+            color: $c-white;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            padding-top: 145px;
+            padding-bottom: 48px;
+            text-align: center;
+        }
+        .play-btn{
+            background-color: $c-white;
+            color: black;
+            width: 127px;
+            height: 127px;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-bottom: 48px;
+        }
+        button{
+            @extend %btn-lato;
+            margin-bottom: 188px;
+            background-color: transparent;
+            border: 1px solid $c-white;
+        }
+    }
+}
+
+.service-sec{
+    margin-top: 153px;
+    margin-bottom: 153px;
+    display: flex;
+    flex-flow: column;
+
+}
+
+.service-bg{
+    width: 674px;
+    height: 814px;
+    background-color: $c-oliv;
+}
+
+.our-service{
+    position: absolute;
+    margin-top: -700px;
+    background-color: $c-white;
+    @include px(50px);
+    @include py(10px);
+    text-align: center;
+
+    h2{
+        @include fonts($font-pt, 50px, 700, 66px);
+        color: $c-oliv;
+    }
+    h5{
+        @include fonts($font-lato, 30px, 400, 60px);
+        color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-flow: column wrap;
+    }
+}
+
+// CHoose us style
+
+.choose-us-sec{
+    background-image: url(../img/why-chose-img.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 234px;
+    padding-bottom: 143px;
+
+    .choose-us{
+        padding:0px 146px 106px 82px;
+        background: rgba(15, 70, 32, 0.8);
+        display: inline-block;
+        
+        .choose-batch{
+            @extend %batch;
+            background-color: $c-white;
+            color: $c-oliv;
+            padding: 36px 75px 32px 74px;
+            margin-top: -400px;
+            margin-bottom: 80px;
+        }
+        .border-line{
+            width: 119px;
+            height: 2px;
+            background-color: $c-white;
+            margin-right: 63px;
+            float: left;
+            margin-top: 20px;
+        }
+        p{
+            @include fonts($font-lato, 40px, 400,);
+            color: $c-white;
+            display: flex;
+            flex-flow: column;
+            font-style: italic;
+        }
+
+        ul{
+            margin-top: 77px;
+            
+            li{
+                list-style: initial;
+                color: $c-white;
+                @include fonts($font-lato, 40px, 400, 65px);
+
+            }
+        }
+        
+    }
+}
+
+

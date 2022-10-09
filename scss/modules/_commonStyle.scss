@@ -3,6 +3,13 @@ button {
     border: none;
     cursor: pointer;
 }
+%batch{
+    @include fonts($font-pt, 50px, 700, 66px);
+    color: white;
+    background-color: $c-oliv-dark;
+    display: inline-block;
+}
+
 %btn {
     border-radius: 5px;
     padding: 16px 32px;
