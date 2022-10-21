@@ -1,34 +1,15 @@
 .div-wrapper{
+    width: 1000px;
+    width: 100vw;
+    height: 500px;
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
-    column-gap: 20px;
-}
-.div1{
-    width: 45%;
-    height: 200px;
-    background-color: blue;
+    background-color: bisque;
 }
 
-.div2{
-    width: 45%;
-    height: 200px;
-    background-color: rgb(222, 175, 113);
-}
-
-.div3{
-    width: 20%;
-    height: 200px;
-    background-color: rgb(200, 190, 86);
-}
-
-.div4{
-    width: 20%;
-    height: 200px;
-    background-color: rgb(223, 115, 227);
-}
-
-.div5{
-    width: 20%;
-    height: 200px;
-    background-color: rgb(0, 255, 51);
+.div {
+    width: 70vw;
+    height: 400px;
+    background-color: aqua;
 }

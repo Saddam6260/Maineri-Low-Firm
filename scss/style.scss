@@ -126,48 +126,6 @@ header {
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
-
-        .logo-side {
-            display: flex;
-            align-items: center;
-            column-gap: 23px;
-            .logo {
-                width: 55px;
-                height: 55px;
-                @include media(1200px) {
-                    width: 72px;
-                    height: 72px;
-                }
-                @include media(1400px) {
-                    width: 85px;
-                    height: 85px;
-                }
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            .brand-name {
-                h2,
-                p {
-                    @include fonts($font-gothic, 30px, 400);
-                    @include media(1400px) {
-                        font-size: 34px;
-                    }
-                }
-                h2 {
-                    border-bottom: 1px solid $c-white;
-                }
-                p {
-                    margin-top: 5px;
-                    font-size: 14px;
-                    @include media(1400px) {
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
-
         // navbar btn
         .nav-btn {
             color: $c-white;
@@ -200,6 +158,47 @@ header {
         }
     }
 }
+.logo-side {
+    display: flex;
+    align-items: center;
+    column-gap: 23px;
+    .logo {
+        width: 55px;
+        height: 55px;
+        @include media(1200px) {
+            width: 72px;
+            height: 72px;
+        }
+        @include media(1400px) {
+            width: 85px;
+            height: 85px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .brand-name {
+        h2,
+        p {
+            @include fonts($font-gothic, 30px, 400);
+            @include media(1400px) {
+                font-size: 34px;
+            }
+        }
+        h2 {
+            border-bottom: 1px solid $c-white;
+        }
+        p {
+            margin-top: 5px;
+            font-size: 14px;
+            @include media(1400px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 // Main section style
 
 .main-wrapper {
@@ -362,37 +361,38 @@ header {
     align-items: center;
     margin-top: 101px;
     margin-bottom: 70px;
+}
+.oliv-span{
+    color: #41845B;
+    @include fonts($font-pt, 25px, 400, 40px);
 
-    span{
-        color: #41845B;
-        @include fonts($font-pt, 25px, 400, 40px);
-
-        @include media(768px) {
-            font-size: 30px;
-        }
-    }
-    h1{
-        @include fonts($font-pt, 40px, 700, 75px);
-        margin-top: 23px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        text-align: center;
-
-        @include media(768px) {
-            font-size: 55px;
-        }
-    }
-    .about-border{
-        @extend %border-oliv;
-    }
-    p{
-        @include fonts($font-lato, 30px, 400, 36px);
-        font-style: italic;
-        color: rgba(0, 0, 0, 0.7);
-        text-align: center;
+    @include media(768px) {
+        font-size: 30px;
     }
 }
+.common-head{
+    @include fonts($font-pt, 40px, 700, 75px);
+    margin-top: 23px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
 
+    @include media(768px) {
+        font-size: 55px;
+    }
+}
+.italic-p{
+    @include fonts($font-lato, 30px, 400, 36px);
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+.border-oliv{
+    width: 100px;
+    height: 3px;
+    background-color: $c-oliv;
+    margin-bottom: 25px;
+}
 // logo set section
 
 .logo-set-sec{
@@ -471,22 +471,22 @@ header {
     p{
         @include fonts($font-lato, 30px, 400, 50px);
     }
-    a{
-        @include fonts($font-lato, 25px, 500, 30px);
-        display: inline-block;
-        margin-top: 107px;
-        text-decoration: none;
-        color: $c-oliv;
-        margin-bottom: 150px;
+}
+.read-more{
+    @include fonts($font-lato, 25px, 500, 30px);
+    display: inline-block;
+    margin-top: 107px;
+    text-decoration: none;
+    color: $c-oliv;
+    margin-bottom: 150px;
 
-        @include media(768px) {
-            font-size: 30px;
-            margin-bottom: 166px;
-        }
+    @include media(768px) {
+        font-size: 30px;
+        margin-bottom: 166px;
+    }
 
-        i{
-            margin-left: 30px;
-        }
+    i{
+        margin-left: 30px;
     }
 }
 
@@ -620,25 +620,52 @@ header {
 }
 
 // Our service
-// .service-sec{
-//     margin-top: 153px;
-//     margin-bottom: 153px;
-//     position: relative;
-// }
-// .service-bg{
-//     height: 814px;
-//     width: 35vw;
-//     background-color: $c-oliv;
-//     position: absolute;
-//     z-index: 1;
-// }
+.service-sec{
+    height: 814px;
+    background-image: linear-gradient(rgba(15, 70, 32, 0.8),rgba(15, 70, 32, 0.8));
+    background-size: 30% 100%;
+    background-repeat: no-repeat;
+    margin-top: 153px;
+    margin-bottom: 153px;
+    display: flex;
 
-// .our-service{
-//     position: absolute;
-//     z-index: 2;
-// }
-// CHoose us style
+    h3{
+        @include fonts($font-pt, 40px, 700, 66px);
+        color: $c-oliv;
+        margin-top: -50px;
 
+        @include media(992px) {
+            font-size: 50px;
+        }
+    }
+
+    .container{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        .our-service{
+            @include px(30px);
+            @include py(80px);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            row-gap: 50px;
+
+            h4{
+                @include fonts($font-lato, 30px, 400, 60px);
+                text-align: center;
+
+                @include media(992px) {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+// Chose us style
 .choose-us-sec{
     background-image: url(../img/why-chose-img.png);
     background-size: 100% 100%;
@@ -731,26 +758,6 @@ header {
     align-items: center;
     @include py(90px);
 
-    span{
-        @include fonts($font-pt, 30px, 400, 40px);
-        color: $c-oliv;
-        padding-bottom: 23px;
-    }
-    h1{
-        @include fonts($font-pt, 50px, 700, 66px);
-        text-transform: uppercase;
-    }
-    .practice-border{
-        @extend %border-oliv;
-        margin-top: 25px;
-    }
-    p{
-        @include fonts($font-lato, 30px, 400, 36px);
-        font-style: italic;
-        color: rgba(0, 0, 0, 0.7);
-        text-align: center;
-    }
-
 }
 
 // Type of damage
@@ -758,12 +765,18 @@ header {
 .type-of-damage{
     @include px(25px);
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     row-gap: 22px;
+
+    @include media(1200px) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
 }
 .type-of-damage div{
-    width: 360px;
+    width: 90%;
     height: 356px;
     border-radius: 20px;
     display: flex;
@@ -771,6 +784,20 @@ header {
     justify-content: center;
     align-items: center;
     background-size: cover;
+
+
+    @include media(992px) {
+        width: 75%;
+    }
+    @include media(1200px) {
+        width: 49%;
+    }
+    @include media(1400px) {
+        width: 49%;
+    }
+    @include media(1800px) {
+        width: 19%;
+    }
 
     span{
         @include fonts($font-pt, 29px, 700, 39px);
@@ -838,4 +865,321 @@ header {
     background-size: cover;
 }
 
+.damage-heading{
+    padding: 126px 0px 83px 65px;
 
+    h1{
+        @include fonts($font-pt, 50px, 700, 66px);
+        margin-bottom: 44px;
+        text-transform: uppercase;
+
+        @include media(1400px) {
+            display: flex;
+            flex-flow: column wrap;
+        }
+    }
+}
+
+// Medical Expenses style
+
+.medical-expenses{
+    display: flex;
+    flex-flow: column wrap;
+    background: url(.jpg), rgba(236, 236, 236, 0.56);
+
+    .container{
+        @include media(1400px) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+    }
+    .medical-content{
+        width: 100%;
+
+        @include media(1400px) {
+            width: 54%;
+        }
+        
+        p{
+            margin-top: 100px;
+            margin-bottom: 70px;
+            @include fonts($font-lato, 30px, 500, 55px);
+
+            @include media(1800px) {
+                margin-top: 141px;
+                margin-bottom: 88px;
+                font-size: 35px;
+                line-height: 60px;
+            }
+        }
+        button{
+            @include fonts($font-lato, 25px, 400, 30px);
+            @include py(25px);
+            @include px(113px);
+            background-color: $c-oliv-dark;
+            text-transform: uppercase;
+            color: $c-white;
+            margin-bottom: 50px;
+        }
+    }
+
+    .medical-img{
+        width: 100%;
+
+        @include media(1400px) {
+            width: 46%;
+            margin-top: -130px;
+        }
+
+        @include media(1800px) {
+            margin-top: -168px;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.angle-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    column-gap: 20px;
+
+    img{
+        width: 67px;
+        height: 67px;
+        margin-bottom: 72px;
+        margin-top: 20px;
+    }
+}
+
+// Meet our team
+.meet-our-team{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 125px;
+
+    .meet-img{
+        margin-top: 81px;
+        width: 100%;
+        height: 450px;
+        background-image: url("../img/meet-img.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include media(992px) {
+            width: 95%;
+            height: 491px;
+        }
+    }
+}
+// Client Reviews
+
+.client-reviews{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-top: 74px;
+    margin-bottom: 100px;
+}
+.reviews-wrap{
+    width: 100vw;
+    height: 766px;
+    background-image: url("../img/client-reviews-img.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .reviews-content{
+        width: 85vw;
+        background-color: white;
+        height: 80%;
+        border-radius: 0px 0px 30px 30px;
+    }
+}
+
+.anython-reviews{
+    @include px(40px);
+
+    @include media(992px) {
+        @include px(60px);
+    }
+    @include media(1200px) {
+        @include px(80px);
+    }
+    @include media(1400px) {
+        @include px(100px);
+    }
+
+    h1{
+        font-size: 40px;
+        color: $c-oliv;
+        padding-top: 40px;
+    }
+    p{
+        @include fonts($font-lato, 25px, 400, 45px);
+        color: $c-oliv;
+        font-style: italic;
+        text-align: center;
+        padding-top: 40px;
+
+        @include media(576px) {
+            font-size: 27px;
+        }
+        @include media(768px) {
+            font-size: 30px;
+        }
+        @include media(992px) {
+            font-size: 34px;
+        }
+        @include media(1200px) {
+            font-size: 38px;
+        }
+    }
+}
+
+.shift-btns{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include px(66px);
+    padding-top: 40px;
+
+    h2{
+        @include fonts($font-lato, 35px, 700, 40px);
+        color: $c-oliv;
+
+        @include media(992px) {
+            font-size: 40px;
+        }
+        @include media(1300px) {
+            font-size: 45px;
+        }
+    }
+
+    img{
+        width: 67px;
+        height: 67px;
+    }
+}
+
+// Letest news style
+.news-heading{
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    @include py(43px);
+}
+.march-26{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    .news26-img{
+        img{
+            width: 100%;
+        }
+    }
+    .news26-body{
+        padding: 10px 65px 41px 10px;
+        p{
+            margin-bottom: 10px;   
+            span{
+                color: $c-white;
+        }
+        a{
+            margin: 0px;
+        }
+    }
+}
+// Letest news style
+
+// Footer style
+
+.footer-row{
+    display: flex;
+    flex-flow: column wrap;
+    @include py(74px);
+
+    @include media(992px) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    @include media(1400px) {
+        align-items: center;
+    }
+}
+
+footer{
+    background-image: url("../img/footer-img.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .footer-logo{
+        width: 100%;
+
+        @include media(992px) {
+            width: 67%;
+        }
+        @include media(1400px) {
+            width: 40%;
+        }
+
+        .logo-side{
+            padding-top: 50px;
+            padding-bottom: 40px;
+    
+            .brand-name{   
+                h2, p{
+                    color: $c-white;
+                }
+            }
+        }
+        h3{
+            @include fonts($font-lato, 26px, 400, 45px);
+            color: $c-white;
+            display: flex;
+            flex-flow: column wrap;
+            margin-bottom: 20px;
+        }
+        p{
+            @include fonts($font-lato, 22px, 300, 55px);
+            color: $c-white;
+        }
+    }
+
+    .footer-col{
+        width: 100%;
+        margin-top: 50px;
+
+        @include media(992px) {
+            width: 33%;
+        }
+        @include media(1400px) {
+            width: 20%;
+        }
+
+        h3{
+            color: $c-white;
+            @include fonts($font-pt, 28px, 400, 40px);
+            margin-bottom: 20px;
+        }
+        p, a{
+            color: $c-white;
+            display: block;
+            @include fonts($font-lato, 22px, 400, 40px);
+        }
+
+    }
+}
