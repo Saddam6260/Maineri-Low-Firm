@@ -1074,6 +1074,10 @@ header {
 }
 
 // Letest news style
+.news-wrap{
+    display: flex;
+    flex-flow: row wrap;
+}
 .news-heading{
     text-align: center;
     display: flex;
@@ -1081,25 +1085,103 @@ header {
     align-items: center;
     @include py(43px);
 }
+p{
+    margin-bottom: 10px; 
+
+    a{
+        color: $c-oliv-dark;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+h1{
+    @include fonts($font-lato, 40px, 500, 60px);
+    margin-bottom: 10px;
+
+    @include media(1400px) {
+        font-size: 45px;
+    }
+}
 .march-26{
     display: flex;
     flex-flow: row wrap;
     width: 100%;
     .news26-img{
+        width: 100%;
+        @include media(1400px) {
+            width: 50%;
+        }
         img{
             width: 100%;
         }
     }
     .news26-body{
+        width: 100%;
         padding: 10px 65px 41px 10px;
-        p{
-            margin-bottom: 10px;   
-            span{
-                color: $c-white;
+
+        @include media(1200px) {
+            width: 50%;
+            padding: 25px 60px 41px 45px;
         }
-        a{
+        
+        .read-more{
             margin: 0px;
+            color: $c-oliv-dark;
+            text-decoration: none;
+            font-weight: bold;
+
+            @include media(1200px) {
+                margin-top: 150px;
+            }
+            @include media(1800px) {
+                margin-top: 310px;
+            }
         }
+    }
+}
+
+.march-19{
+    width: 100%;
+    padding: 10px 65px 41px 10px;
+
+    @include media(1200px) {
+        width: 50%;
+    }
+
+    .news19-img{
+        height: 581px;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    p{
+        padding-top: 10px;
+    }
+    .read-more{
+        margin: 0px;
+    }
+}
+.march-27{
+    width: 100%;
+    padding: 10px 65px 41px 10px;
+
+    @include media(1200px) {
+        width: 50%;
+    }
+    .news27-img {
+        height: 581px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    p{
+        padding-top: 10px;
+    }
+    .read-more{
+        margin: 0px;
     }
 }
 // Letest news style
@@ -1183,4 +1265,43 @@ footer{
         }
 
     }
-}}
+}
+
+// About page
+
+// about mane section style
+
+.about-head-wrap{
+    background-image: url("../img/about-img/unsplash_5KaYlNqheZE.png");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    .about-main-bg{
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 170px;
+
+        @include media(992px) {
+            padding-top: 127px;
+            padding-bottom: 207px;
+        }
+
+        h1{
+            color: $c-white;
+            @include fonts($font-pt, 50px, 700, 60px);
+
+            @include media(1200px) {
+                font-size: 60px;
+            }
+        }
+        p{
+            color: $c-white;
+            @include fonts($font-lato, 22px, 300, 30px);
+
+            @include media(1200px) {
+                font-size: 25px;
+            }
+        }
+    }
+}
