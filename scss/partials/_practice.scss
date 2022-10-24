@@ -1,0 +1,11 @@
+// Practice head wrap
+.practice-head-wrap{
+    background-image: url("../img/Practice-area/practice-area-bg.png");
+    @include background(center, cover, no-repeat);
+
+    .practice-main-bg{
+        padding-top: 127px;
+        padding-bottom: 206px;
+        text-align: center;
+    }
+}

@@ -1,15 +1,14 @@
-.div-wrapper{
-    width: 1000px;
-    width: 100vw;
-    height: 500px;
+.container{
     display: flex;
+    flex-flow: row;
     justify-content: center;
-    flex-flow: row wrap;
-    background-color: bisque;
 }
 
-.div {
-    width: 70vw;
-    height: 400px;
-    background-color: aqua;
+.row{
+    max-width: 1060px;
+
+}
+input[type=text] {
+    width: 50%;
+    padding: 10px 13px;
 }

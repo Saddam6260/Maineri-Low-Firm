@@ -1,0 +1,38 @@
+// reviews head wrap
+.reviews-head-wrap{
+    background-image: url("../img/reviews-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .reviews-main-bg{
+        padding-top: 145px;
+        padding-bottom: 188px;
+        text-align: center;
+    }
+}
+
+// Site logo
+.site-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+
+    .google{
+        width: 146px;
+    }
+    .yelp{
+        width: 123px;
+    }
+    .avvo{
+        width: 123px;
+    }
+    .facebook{
+        width: 194px;
+    }
+    img{
+        width: 100%;
+    }
+}

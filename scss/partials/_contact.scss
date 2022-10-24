@@ -1,0 +1,6 @@
+// Contact-bg
+.contact-head-wrap{
+    height: 534px;
+    background-image: url("../img/contact-img/contact-bg.png");
+    @include background(center, cover, no-repeat);
+}

@@ -1,0 +1,200 @@
+// main section
+.injury-head-wrap{
+    background-image: url("../img/personal-injury/personal-injury.png");
+    @include background(center, cover, no-repeat);
+
+    .injury-main-bg{
+        padding-top: 228px;
+        padding-bottom: 281px;
+        text-align: center;
+    }
+}
+
+// attorney style
+.attorney {
+    background-image: url("../img/personal-injury/attorney-bg.png");
+    @include background(center, 100% 100%, no-repeat);
+    margin-bottom: 127px;
+
+    @include media(1400px) {
+        @include background(right top, 52% 100%, no-repeat);
+    }
+}
+.attorney-top{
+    background-image: $oliv-background;
+    @include background(left top, 29% auto, no-repeat );
+    @include py(90px);
+
+    .why-hire-heading{
+        background-color: $c-white;
+        @include py(35px);
+        @include px(30px);
+        width: 80%;
+
+        @include media(1200px) {
+            @include py(45px);
+            @include px(30px);
+            width: 70%
+        }
+        @include media(1400px) {
+            @include py(55px);
+            @include px(60px);
+            width: 60%
+        }
+        @include media(1800px) {
+            @include py(65px);
+            @include px(73px);
+            width: 55%
+        }
+
+
+        h1{
+            @include fonts($font-pt, 35px, 700, 50px);
+            color: $c-oliv;
+
+            @include media(1400px) {
+                font-size: 45px;
+                line-height: 65px;
+            }
+            @include media(1800px) {
+                font-size: 55px;
+                line-height: 73px;
+            }
+        }
+    }
+}
+.attorney-description{
+    padding-bottom: 50px;
+
+    @include media(1400px) {
+        padding-bottom: none;
+        width: 45%;
+    }
+    .border-oliv{
+        margin-top: 55px;
+    }
+    p{
+        @include fonts($font-lato, 25px, 500, 40px);
+        text-align: justify;
+        color: rgba(0, 0, 0, 0.75);
+
+        @include media(1400px) {
+            @include fonts($font-lato, 30px, 500, 55px);
+        }
+    }
+}
+
+// Injury Recovary
+.injury-recovary{
+    .container{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: end;
+    }
+}
+.recovary-content-wrap{
+    width: 100%;
+    background-color: $c-oliv;
+
+    @include media(1200px) {
+        width: 78%;
+        margin-right: 0px;
+        display: flex;
+    }
+    img{
+        width: 100%;
+
+        @include media(1200px) {
+            width: 814px;
+            height: 560px;
+        }
+    }
+}
+.recovary-description{
+    padding: 20px;
+
+    @include media(1200px) {
+        @include py(96px);
+        @include px(84px);
+    }
+
+    p{
+        @include fonts($font-lato, 25px, 500, 45px);
+        color: $c-white;
+        text-align: justify;
+
+        @include media(1200px) {
+            font-size: 30px;
+            line-height: 50px;
+        }
+    }
+}
+
+.recovaryb-pera{
+    margin-top: 43px;;
+    margin-bottom: 128px;
+    padding: 20px;
+
+    @include media(1200px) {
+        width: 80%;
+    }
+
+    p{
+        @include fonts($font-lato, 25px, 500, 45px);
+        color: rgba(0, 0, 0, 0.75);    
+        text-align: justify;
+    }
+}
+
+// we are dedicated
+.we-are-dedicated{
+    max-height: 700px;
+    background-image: linear-gradient(rgba(15, 70, 32, 0.8),rgba(15, 70, 32, 0.8));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 300px;
+
+    @include media(992px) {
+        max-height: 650px;
+    }
+
+    @include media(1200px) {
+        height: 600px; 
+    }
+    @include media(1400px) {
+        height: 530px; 
+    }
+    @include media(1800px) {
+        height: 456px; 
+    }
+
+    .container{
+        padding-top: 133px;
+
+        .we-are-dedicated-content{
+            background-color: $c-white;
+            @include py(30px);
+            @include px(35px);
+
+            @include media(768px) {
+                @include py(81px);
+                @include px(93px);
+            }
+            @include media(992px) {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+    
+            p{
+                @include fonts($font-lato, 25px, 500, 55px);
+                color: $c-oliv;
+                text-align: justify;
+
+                @include media(992px) {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

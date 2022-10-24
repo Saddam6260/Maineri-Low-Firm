@@ -1,0 +1,38 @@
+// about mane section style
+.about-head-wrap{
+    background-image: url("../img/about-img/unsplash_5KaYlNqheZE.png");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    .about-main-bg{
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 170px;
+
+        @include media(992px) {
+            padding-top: 127px;
+            padding-bottom: 207px;
+        }
+
+        
+    }
+}
+.common-main-bg{
+    h1{
+        color: $c-white;
+        @include fonts($font-pt, 50px, 700, 60px);
+
+        @include media(1200px) {
+            font-size: 60px;
+        }
+    }
+    p{
+        color: $c-white;
+        @include fonts($font-lato, 22px, 300, 30px);
+
+        @include media(1200px) {
+            font-size: 25px;
+        }
+    }
+}
