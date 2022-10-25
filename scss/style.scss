@@ -70,7 +70,7 @@ $screenSize: (
 }
 
 // Background mixin
-    @mixin background($position, $size, $repeat){
+@mixin background($position, $size, $repeat){
     background-position: $position;
     background-size: $size;
     background-repeat: $repeat;

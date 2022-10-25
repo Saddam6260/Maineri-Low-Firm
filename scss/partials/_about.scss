@@ -36,3 +36,126 @@
         }
     }
 }
+
+// Attorney style
+
+.common-oliv-bg{
+    background-image: $oliv-background;
+    @include py(106px);
+    margin-bottom: 81px;
+    @include background(right, 30% 100%, no-repeat);
+}
+
+.attorney-sec{
+    
+    .container{
+        display: flex;
+        flex-flow: column;
+        @include px(30px);
+        row-gap: 30px;
+
+        @include media(992px) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            @include px(0px)
+        }
+
+        .poul-img{
+            width: 100%;
+            display: flex;
+            order: 1;
+
+            @include media(992px) {
+                width: 46%;
+                order: 2;
+            }
+            @include media(1400px) {
+                width: 42%;
+            }
+
+            img{
+                width: 100%;
+
+            }
+        }
+    }
+}
+
+.attorney-content{
+    display: flex;
+    flex-flow: column wrap;
+    order: 2;
+
+    @include media(992px) {
+        width: 50%;
+        order: 1;
+    }
+    @include media(1400px) {
+        width: 53%;
+    }
+
+    h1{
+        @include fonts($font-pt, 45px, 700, 40px);
+        margin-bottom: 57px;
+
+        @include media(992px) {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        @include media(1400px) {
+            font-size: 55px;
+        }
+        @include media(1800px) {
+            margin-bottom: 57px;
+        }
+    }
+    p{
+        @include fonts($font-lato, 25px, 400, 40px);
+        color: rgba(0, 0, 0, 0.75);
+
+        @include media(992px) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        @include media(1200px) {
+            font-size: 30px;
+            line-height: 47px;
+        }
+    }
+    .edu-margin{
+        margin-top: 57px;
+
+        @include media(992px) {
+            margin-top: 30px;
+        }
+        @include media(1800px) {
+            margin-top: 57px;
+        }
+    }
+    .education{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid rgba(156, 169, 161, 0.3);
+
+        p{
+            @include fonts($font-lato, 25px, 400, 50px);
+
+            @include media(768px) {
+                font-size: 28px;;
+                line-height: 55px;
+            }
+        }
+        .circle-plus{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+    }   
+}
