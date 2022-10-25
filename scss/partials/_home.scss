@@ -12,11 +12,11 @@
         li {
             font-family: $font-lato;
             font-weight: 400;
-            // @extend .color-white;
+            color: $c-white;
             margin-bottom: 10px;
             &:first-child {
                 @include media(768px) {
-                    border-right: 2px solid
+                    border-right: 2px solid $c-white;
                     // index($list: $color-list, $value: "white");
                 }
             }
@@ -31,7 +31,7 @@
         }
         .btn {
             @extend %btn;
-            // @extend .bg-white;
+            color: $c-white;
             @include media(768px) {
                 padding-left: 20px;
             }
@@ -43,7 +43,7 @@
 header {
     background-color: rgba(0, 0, 0, 0.48);
     @include py(17px);
-    // @extend .color-white;
+    color: $c-white;
 
     .topmenu {
         display: flex;
@@ -140,7 +140,7 @@ header {
         margin-top: 208px;
     }
     .lg-title {
-        @include fonts($font-pt, 52px, 700, 80px);
+        @include fonts($font-pt, 50px, 700, 80px);
         border-top: 2px solid $c-white;
         border-bottom: 2px solid $c-white;
         @include py(20px);
@@ -233,11 +233,14 @@ header {
     }
     h1{
         color: #BB9338;
-        @include fonts($font-pt, 45px, 700, 66px);
+        @include fonts($font-pt, 42px, 700, 66px);
         margin-bottom: 13px;
 
         @include media(768px) {
-            font-size: 50px;
+            font-size: 46px;
+        }
+        @include media(992px) {
+            font-size: 46px;
         }
     }
     p{
@@ -455,11 +458,14 @@ header {
         @include px(80px);
         position: relative;
         margin-top: -77px;
-        font-size: 45px;
+        font-size: 38px;
 
         @include media(768px) {
             @include py(34px);
             @include px(90px);
+            font-size: 42px;
+        }
+        @include media(992px) {
             font-size: 45px;
         }
     }
@@ -502,13 +508,21 @@ header {
 
 // Our service
 .service-sec{
-    height: 814px;
+    // height: 814px;
     background-image: linear-gradient(rgba(15, 70, 32, 0.8),rgba(15, 70, 32, 0.8));
     background-size: 30% 100%;
     background-repeat: no-repeat;
     margin-top: 153px;
     margin-bottom: 153px;
     display: flex;
+    @include py(100px);
+
+    @include media(768px) {
+        @include py(110px);
+    }
+    @include media(992px) {
+        @include py(125px);
+    }
 
     h3{
         @include fonts($font-pt, 40px, 700, 66px);
@@ -525,27 +539,48 @@ header {
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-
-        .our-service{
-            @include px(30px);
-            @include py(80px);
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            row-gap: 50px;
-
-            h4{
-                @include fonts($font-lato, 30px, 400, 60px);
-                text-align: center;
-
-                @include media(992px) {
-                    font-size: 45px;
-                }
-            }
-        }
     }
 }
 
+.our-service{
+    @include px(30px);
+    @include py(80px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @include media(768px) {
+        @include px(40px);
+        @include py(90px);
+    }
+    @include media(992px) {
+        @include px(50px);
+        @include py(100px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    @include media(1200px) {
+        @include px(60px);
+        @include py(110px);
+    }
+    @include media(1400px) {
+        @include px(67px);
+        @include py(132px);
+    }
+
+    h4{
+        @include fonts($font-lato, 30px, 400, 60px);
+        text-align: center;
+
+        @include media(768px) {
+            font-size: 35px;
+        }
+        @include media(992px) {
+            font-size: 45px;
+        }
+    }
+}
 // Chose us style
 .choose-us-sec{
     background-image: url(../img/why-chose-img.png);
@@ -765,7 +800,7 @@ header {
     background: url(.jpg), rgba(236, 236, 236, 0.56);
 
     .container{
-        @include media(1400px) {
+        @include media(1200px) {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
@@ -774,8 +809,9 @@ header {
     .medical-content{
         width: 100%;
 
-        @include media(1400px) {
+        @include media(1200px) {
             width: 54%;
+            padding-right: 20px;
         }
         
         p{
@@ -804,9 +840,9 @@ header {
     .medical-img{
         width: 100%;
 
-        @include media(1400px) {
+        @include media(1200px) {
             width: 46%;
-            margin-top: -130px;
+            margin-top: -100px;
         }
 
         @include media(1800px) {
