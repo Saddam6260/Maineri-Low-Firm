@@ -454,19 +454,21 @@ header {
 
     .mission-batch{
         @extend %batch;
-        @include py(30px);
-        @include px(80px);
+        @include py(25px);
+        @include px(70px);
         position: relative;
         margin-top: -77px;
         font-size: 38px;
 
         @include media(768px) {
-            @include py(34px);
-            @include px(90px);
+            @include py(30px);
+            @include px(80px);
             font-size: 42px;
         }
         @include media(992px) {
             font-size: 45px;
+            @include py(34px);
+            @include px(90px);
         }
     }
 
