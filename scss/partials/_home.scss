@@ -12,12 +12,12 @@
         li {
             font-family: $font-lato;
             font-weight: 400;
-            @extend .color-white;
+            // @extend .color-white;
             margin-bottom: 10px;
             &:first-child {
                 @include media(768px) {
                     border-right: 2px solid
-                    index($list: $color-list, $value: "white");
+                    // index($list: $color-list, $value: "white");
                 }
             }
             &:last-child {
@@ -31,7 +31,7 @@
         }
         .btn {
             @extend %btn;
-            @extend .bg-white;
+            // @extend .bg-white;
             @include media(768px) {
                 padding-left: 20px;
             }
@@ -43,7 +43,7 @@
 header {
     background-color: rgba(0, 0, 0, 0.48);
     @include py(17px);
-    @extend .color-white;
+    // @extend .color-white;
 
     .topmenu {
         display: flex;
