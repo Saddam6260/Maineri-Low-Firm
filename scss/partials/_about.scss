@@ -159,3 +159,54 @@
         }
     }   
 }
+
+// seth Kohen
+
+.seth-kohen{
+    background-position: left top;
+
+    .container{
+        display: flex;
+        flex-flow: column;
+        @include px(30px);
+        row-gap: 30px;
+
+        @include media(992px) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            @include px(0px)
+        }
+
+        .seth-img{
+            width: 100%;
+
+            @include media(992px) {
+                width: 46%;
+            }
+            @include media(1200px) {
+                width: 46%;
+                height: 850px;
+            }
+            @include media(1400px) {
+                width: 42%;
+                height: 850px;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .attorney-content{
+            @include media(1200px) {
+                padding-left: 60px;
+            }
+            @include media(1400px) {
+                padding-left: 80px;
+            }
+            @include media(1800px) {
+                padding-left: 100px;
+            }
+        }
+    }
+}
